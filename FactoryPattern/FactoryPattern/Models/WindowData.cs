@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FactoryPattern.Models
 {
-	class WindowData
+	public class WindowData
 	{
 		public string ContentText { get; set; }
 		public int HeightLength { get; set; }

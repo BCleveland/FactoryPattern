@@ -34,7 +34,7 @@
             <Button Name="Add" Content="Add" Width="80" Height="30" Canvas.Left="56" Canvas.Top="272" Click="Add_Click"></Button>
             <Button Name="Undo" Content="Undo" Width="80" Height="30" Canvas.Left="155" Canvas.Top="272" Click="Undo_Click"></Button>
             <Label Name="LabelLanguage" Content="Language:" Canvas.Left="44" Canvas.Top="320" FontSize="15"></Label>
-            <ComboBox Canvas.Left="47" Canvas.Top="352" Width="200" Height="30" SelectedIndex="0">
+            <ComboBox Name="ComboLanguage" Canvas.Left="47" Canvas.Top="352" Width="200" Height="30" SelectedIndex="0">
                 <Label>HTML</Label>
                 <Label>WPF</Label>
             </ComboBox>
