@@ -8,6 +8,7 @@ namespace FactoryPattern.Models
 {
 	public class WindowData
 	{
+		public string ElementType { get; set; }
 		public string ContentText { get; set; }
 		public int HeightLength { get; set; }
 		public int WidthLength { get; set; }
