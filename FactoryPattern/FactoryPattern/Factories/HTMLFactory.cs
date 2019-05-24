@@ -13,10 +13,12 @@ namespace FactoryPattern.Factories
 		public void ExportToFile(List<WindowData> data)
 		{
 			StringBuilder code = new StringBuilder();
+			code.AppendLine("<!--Begin Generated Code-->");
 			foreach(var element in data)
 			{
 				code.AppendLine("ctx.fillRect(0, 0, 150, 75);");
 			}
+			code.AppendLine("<!--End Generated Code-->");
 			string file = File.OpenText("../../HtmlTemplate.html").ReadToEnd();
 			string finished = file.Replace("<!--CodeHere-->", code.ToString());
 			File.WriteAllText("Output.html", finished);
