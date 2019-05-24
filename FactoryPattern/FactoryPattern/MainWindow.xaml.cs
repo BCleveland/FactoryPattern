@@ -71,7 +71,7 @@ namespace FactoryPattern
 
 		private void Build_Click(object sender, RoutedEventArgs e)
 		{
-
+			ExportFactory.Export(ComboLanguage.SelectedValue.ToString(), windowDatas.ToList());
 		}
 	}
 }
