@@ -33,6 +33,7 @@ namespace FactoryPattern
 		private WindowData InputWindowData()
 		{
 			WindowData newData = new WindowData();
+			newData.ElementType = ComboboxType.Text;
 			newData.ContentText = TextboxContent.Text;
 
 			int numberData;
