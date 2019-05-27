@@ -5,23 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FactoryPattern"
         mc:Ignorable="d"
-        Title="Factory Pattern" Height="470" Width="700">
+        Title="Factory Pattern" Height="543" Width="704">
     <Grid>
         <Canvas Name="FactoryCanvas">
-            <Label Name="LabelContent" Content="Content" Canvas.Left="44" Canvas.Top="10" FontSize="15"></Label>
-            <TextBox Name="TextboxContent" Width="200" Height="30" Canvas.Left="47" Canvas.Top="39"></TextBox>
-            <Label Name="LabelHeight" Content="Height:" Canvas.Left="44" Canvas.Top="85" FontSize="15"></Label>
-            <TextBox Name="TextboxHeight" Width="109" Height="30" Canvas.Left="138" Canvas.Top="85"></TextBox>
-            <Label Name="LabelWidth" Content="Width:" Canvas.Left="44" Canvas.Top="130" FontSize="15"></Label>
-            <TextBox Name="TextboxWidth" Width="109" Height="30" Canvas.Left="138" Canvas.Top="130" Typography.NumeralStyle="Normal"></TextBox>
-            <Label Name="LabelTop" Content="Top:" Canvas.Left="44" Canvas.Top="175" FontSize="15"></Label>
-            <TextBox Name="TextboxTop" Width="109" Height="30" Canvas.Left="138" Canvas.Top="175"></TextBox>
-            <Label Name="LabelLeft" Content="Left:" Canvas.Left="44" Canvas.Top="219" FontSize="15"></Label>
-            <TextBox Name="TextboxLeft" Width="109" Height="30" Canvas.Left="138" Canvas.Top="219" ></TextBox>
-            <ListBox Name="ListboxMain" Height="421" Canvas.Left="303" Canvas.Top="10" Width="380">
+            <Label x:Name="LabelType" Content="Type:" Canvas.Left="43" Canvas.Top="5" FontSize="15" RenderTransformOrigin="2.282,1.019"/>
+            <ComboBox Name="ComboboxType" Canvas.Left="46" Canvas.Top="37" Width="200" Height="30" SelectedIndex="0">
+                <Label Content="Textbox"/>
+                <Label Content="Button"/>
+            </ComboBox>
+            <Label Name="LabelContent" Content="Content" Canvas.Left="43" Canvas.Top="76" FontSize="15"></Label>
+            <TextBox Name="TextboxContent" Width="200" Height="30" Canvas.Left="46" Canvas.Top="105"></TextBox>
+            <Label Name="LabelHeight" Content="Height:" Canvas.Left="43" Canvas.Top="152" FontSize="15"></Label>
+            <TextBox Name="TextboxHeight" Width="109" Height="30" Canvas.Left="137" Canvas.Top="152"></TextBox>
+            <Label Name="LabelWidth" Content="Width:" Canvas.Left="43" Canvas.Top="196" FontSize="15"></Label>
+            <TextBox Name="TextboxWidth" Width="109" Height="30" Canvas.Left="137" Canvas.Top="196" Typography.NumeralStyle="Normal"></TextBox>
+            <Label Name="LabelTop" Content="Top:" Canvas.Left="43" Canvas.Top="241" FontSize="15"></Label>
+            <TextBox Name="TextboxTop" Width="109" Height="30" Canvas.Left="137" Canvas.Top="241"></TextBox>
+            <Label Name="LabelLeft" Content="Left:" Canvas.Left="43" Canvas.Top="285" FontSize="15"></Label>
+            <TextBox Name="TextboxLeft" Width="109" Height="30" Canvas.Left="137" Canvas.Top="285" ></TextBox>
+            <ListBox Name="ListboxMain" Height="489" Canvas.Left="297" Canvas.Top="10" Width="386">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
+                            <Label Content="{Binding ElementType}" />
                             <Label Content="{Binding ContentText}" />
                             <Label Content="{Binding HeightLength}" />
                             <Label Content="{Binding WidthLength}" />
@@ -31,14 +37,14 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <Button Name="Add" Content="Add" Width="80" Height="30" Canvas.Left="56" Canvas.Top="272" Click="Add_Click"></Button>
-            <Button Name="Undo" Content="Undo" Width="80" Height="30" Canvas.Left="155" Canvas.Top="272" Click="Undo_Click"></Button>
-            <Label Name="LabelLanguage" Content="Language:" Canvas.Left="44" Canvas.Top="320" FontSize="15"></Label>
-            <ComboBox Name="ComboLanguage" Canvas.Left="47" Canvas.Top="352" Width="200" Height="30" SelectedIndex="0">
+            <Button Name="Add" Content="Add" Width="80" Height="30" Canvas.Left="55" Canvas.Top="338" Click="Add_Click"></Button>
+            <Button Name="Undo" Content="Undo" Width="80" Height="30" Canvas.Left="154" Canvas.Top="338" Click="Undo_Click"></Button>
+            <Label Name="LabelLanguage" Content="Language:" Canvas.Left="43" Canvas.Top="386" FontSize="15"></Label>
+            <ComboBox Name="ComboLanguage" Canvas.Left="46" Canvas.Top="418" Width="200" Height="30" SelectedIndex="0">
                 <Label>HTML</Label>
                 <Label>WPF</Label>
             </ComboBox>
-            <Button Name="Build" Content="Build Screen" Width="125" Height="30" Canvas.Left="83" Canvas.Top="395" Click="Build_Click"></Button>
+            <Button Name="Build" Content="Build Screen" Width="125" Height="30" Canvas.Left="82" Canvas.Top="461" Click="Build_Click"></Button>
         </Canvas>
     </Grid>
 </Window>
