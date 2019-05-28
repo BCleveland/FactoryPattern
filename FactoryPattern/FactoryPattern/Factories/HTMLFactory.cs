@@ -16,7 +16,15 @@ namespace FactoryPattern.Factories
 			code.AppendLine("<!--Begin Generated Code-->");
 			foreach(var element in data)
 			{
-				code.AppendLine("ctx.fillRect(0, 0, 150, 75);");
+
+				code.Append("paint_centered(\"" + element.ContentText + "\", " +
+					element.LeftPosition + ", " + element.TopPosition + ", " + element.WidthLength +
+					"," + element.HeightLength + ");\n");
+				if (element.ElementType == "Button")
+				{
+					code.Append("ctx.strokeRect(" + element.LeftPosition + ", " + element.TopPosition + 
+						", " + element.WidthLength + ", " + element.HeightLength + ");\n");
+				}
 			}
 			code.AppendLine("<!--End Generated Code-->");
 			string file = File.OpenText("../../HtmlTemplate.html").ReadToEnd();

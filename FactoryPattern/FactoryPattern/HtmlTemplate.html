@@ -2,11 +2,20 @@
 <body>
 	<canvas id="myCanvas" width="640" height="640" style="border:1px solid #000000;"></canvas>
 	<script>
+		paint_centered = function(text, x, y, w, h) {
+		if (ctx) {
+			// ctx2d.measureText(text).width/2 
+			// returns the text width (given the supplied font) / 2
+			textX = x+w/2-ctx.measureText(text).width/2;
+			textY = y+h/2;
+			ctx.fillText(text, textX, textY);
+			}
+		}
 		var canvas = document.getElementById("myCanvas");
 		var ctx = canvas.getContext("2d");
-		ctx.fillStyle = "#FF0000";
+		ctx.fillStyle = "#000000";
 		ctx.font = "30px Comic Sans MS";
-		ctx.fillStyle = "red";
+		ctx.textBaseline = "middle";
 		<!--CodeHere-->
 	</script>
 </body>
